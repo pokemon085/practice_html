@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+    }
+    .container{
+        position: relative;
+        background-color: #aaee00;
+        width: 100%;
+        height: 100vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        padding:20px;
+    }
+
+    .container .content{
+        position: relative;
+        max-width: 800px;
+    }
+
+    .container .content img{
+        display: block;
+        max-width: 100%;
+    }
+    .txt{
+        font-weight: bold;
+        margin-bottom: 10px;
+        color:#333
+    }
+    .button{
+        position: relative;
+        padding:5px 20px;
+        background-color: #000;
+        color:aliceblue;
+        display: inline-block;
+        text-decoration: none;
+        margin: 10px 0px;
+    }
+
+    .container#blur.active{
+        filter: blur(20px);
+        pointer-events: none;
+        user-select: none;
+    }
+
+    #popup{
+        position: fixed;
+        top:40%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width: 600px;
+        padding:50px;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+        background-color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        transition: .5s;
+        
+    }
+
+    #popup.active{
+        top:40%;
+        visibility:visible;
+        opacity: 1;
+        transition: .5s;
+    }
+</style>
+<body>
+    <div class="container" id="blur">
+        <div class="content">
+            <span class="txt">
+                Lorem ipsum dolor sit amet,rerum unde qui laborum molestias delectus voluptatibus nihil,ur hic? Molestiae laborum nesciunt ut ratione accusantium.
+            </span>
+            <img src="https://picsum.photos/1200/500?random=1" alt="">
+            <div class="button" onclick="toggle()">Read More</div>
+        </div>
+       
+      
+    </div>
+    <div id="popup">
+        <h2>Lorem ipsum dolor sit amet</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae recusandae modi voluptates quam obcaecati ipsum omnis, voluptatum, autem quas id eum inventore nemo incidunt quo consectetur. Beatae accusamus debitis neque.</p>
+        <div class="button" onclick="toggle()">Closed</div>
+    </div>
+    <script type="text/javascript">
+        function toggle(){
+            var blur=document.getElementById("blur");
+            blur.classList.toggle('active');
+            var popup=document.getElementById("popup");
+            popup.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
