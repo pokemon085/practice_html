@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding:0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .item{
+       width: 20%;
+       position: relative;
+    }
+    .item img{
+        display: block;
+        width: 100%;
+    }
+    .item .text{
+        position: absolute;
+        top:0;
+        right:0;
+        left:0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        transition: .5s;
+       
+    }
+    .item h2::after{
+        content: '';
+        display: block;
+        width: 0%;
+        height: 2px;
+        background-color: #000;
+        margin:20px auto;
+        transition: width .5s .5s;
+        /* 寬度 跑0.5s 延遲0.5s */
+    }
+    .item:hover h2::after{
+        width: 90%;
+    }
+    .item:hover >img{
+        filter: blur(10px);
+        transition: .5s;
+    }
+    .item:hover .text {
+        opacity: 1;
+        
+    }
+
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="item">
+            <img src="https://picsum.photos/500/400/?random=1">
+            <div class="text">
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/400/?random=2">
+            <div class="text">
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/400/?random=3">
+            <div class="text">
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/400/?random=4">
+            <div class="text">
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
