@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        html,body{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            background: #003;
+        }
+        .wrap{
+            width: 1200px;
+            display: flex;
+            margin:auto;
+        }
+        .wrap .item{
+            margin:15px;
+            width: 368px;
+            text-align: center;
+            background-color: #fff;
+            border:1px solid #ccc;
+            transform: translateY(0px);
+            transition: .5s;
+        }
+        .wrap .item:hover{
+            transform: translateY(-50px);
+        }
+        .wrap .item img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .item h2{
+            font-weight: 900;
+            transition: .25s;
+        }
+        .item h2::after{
+            content:"";
+            display:block;
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+            margin:20px auto;
+            transition: .25s;
+        }
+        .item p{
+            line-height: 1.5;
+            transition: .25s;
+            min-height: 200px;
+        }
+        .item .txt{
+            padding:20px;
+            position: relative;
+            height: 350px;
+        }
+        .item .txt::before{
+            content:"";
+            position: absolute;
+            width: 0;
+            height: 0;
+            left:0;
+            top:0;
+            border-top: 50px solid transparent;
+            border-left: 184px solid #fff;
+            border-right: 184px solid #fff;
+            transform: translateY(-100%);
+        }
+        .item:hover .txt{
+            background-image: linear-gradient(0deg,#fb8076,#feb85d);
+        }
+        .item:hover .txt::before{
+            border-left: 184px solid #feb85d;
+            border-right: 184px solid #feb85d;
+        }
+        .item:hover h2{
+            color:#fff;
+        }
+        .item:hover p{
+            color:#fff;
+        }
+        .item:hover h2::after{
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">
+            <img src="https://picsum.photos/300/300/?random=1">
+            <div class="txt">
+                <h2>aaaa</h2>
+                <p>Autem sunt laudantium debitis maxime voluptatum mollitia dolores ab earum? Saepe quasi odit dolor temporibus.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/300/300/?random=21">
+            <div class="txt">
+                <h2>aaaa</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ullam commodi ut fugiat alias ea? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ullam commodi ut fugiat alias ea? Autem sunt laudantium debitis maxime voluptatum mollitia dolores ab earum? Saepe quasi odit dolor temporibus.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/300/300/?random=31">
+            <div class="txt">
+                <h2>aaaa</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ullam commodi ut fugiat alias ea? Autem sunt laudantium debitis maxime voluptatum mollitia dolores ab earum? Saepe quasi odit dolor temporibus.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
