@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        body{
+            padding:100px 0;
+            background: linear-gradient(20deg,#3d5493,#1aa2a0) fixed center center / 100% 100%;
+            /* 位置(x/y) / 尺寸(寬/高) */
+        }
+        .wrap{
+            width: 1200px;
+            margin:auto;
+        }
+        .item{
+           display: flex; 
+           align-items: center;
+           margin-bottom: 70px;
+           /* background-color: gray; */
+        }
+        .item .pic{
+            width: 55%;
+            flex-shrink: 0;/* 超過不自動調整直接超出設定範圍 */
+        }
+        .item .pic img{
+            /* width: 100%; */
+            vertical-align: middle;
+        }
+        .item .txt{
+            width: 55%;
+            flex-shrink: 0;
+            padding:50px 30px;
+            background-color: #fa8;
+            box-sizing: border-box; 
+            /* padding的關係會超出盒子所以用border-box維持在盒子裡 */
+            position: relative;
+            z-index: 1;
+        }
+        .item > :first-child{
+            margin-right: -10%;
+        }
+        .item:nth-child(1) .txt{
+            background-color: #f0aec1;
+        }
+        .item:nth-child(2) .txt{
+            background-color: #2afdd0;
+        }
+        .item:nth-child(3) .txt{
+            background-color: #fec979;
+        }
+        .item:nth-child(4) .txt{
+            background-color: #95dbd6;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/600/350/?random=10" />
+            </div>
+            <div class="txt">
+                <h2>各位感覺。</h2>
+                <p>
+                    網絡事情自信工業上午如同實在眼前眼前新人眼睛，本地下載她是，沒有什麼人體浪費幸福某個，校園學者聲音威望但他優勢隨意計劃聯繫採取保存線上承諾，落實參觀指揮外資階段好激動，商務利潤完全這個面臨鑒定請大家儘管家庭環節，眼淚烏日方式，和平島綜合顧問，沒有任何，模。
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="txt">
+                <h2>各位感覺。</h2>
+                <p>
+                    網絡事情自信工業上午如同實在眼前眼前新人眼睛，本地下載她是，沒有什麼人體浪費幸福某個，校園學者聲音威望但他優勢隨意計劃聯繫採取保存線上承諾，落實參觀指揮外資階段好激動，商務利潤完全這個面臨鑒定請大家儘管家庭環節，眼淚烏日方式，和平島綜合顧問，沒有任何，模。
+                </p>
+            </div>
+            <div class="pic">
+                <img src="https://picsum.photos/600/350/?random=20" />
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/600/350/?random=30" />
+            </div>
+            <div class="txt">
+                <h2>各位感覺。</h2>
+                <p>
+                    網絡事情自信工業上午如同實在眼前眼前新人眼睛，本地下載她是，沒有什麼人體浪費幸福某個，校園學者聲音威望但他優勢隨意計劃聯繫採取保存線上承諾，落實參觀指揮外資階段好激動，商務利潤完全這個面臨鑒定請大家儘管家庭環節，眼淚烏日方式，和平島綜合顧問，沒有任何，模。
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="txt">
+                <h2>各位感覺。</h2>
+                <p>
+                    網絡事情自信工業上午如同實在眼前眼前新人眼睛，本地下載她是，沒有什麼人體浪費幸福某個，校園學者聲音威望但他優勢隨意計劃聯繫採取保存線上承諾，落實參觀指揮外資階段好激動，商務利潤完全這個面臨鑒定請大家儘管家庭環節，眼淚烏日方式，和平島綜合顧問，沒有任何，模。
+                </p>
+            </div>
+            <div class="pic">
+                <img src="https://picsum.photos/600/350/?random=40" />
+            </div>
+            
+        </div>
+
+    </div>
+</body>
+
+</html>
