@@ -6,3 +6,12 @@
 平版 橫 .col-lg-佔欄數
 
 桌機 .col-xl-佔欄數
+
+
+
+img-fluid 圖片滿版
+container-fluid 區塊滿版
+
+scoure from youtube csscoke
+https://www.youtube.com/watch?v=cxCD6Ntjl94&list=PLqivELodHt3iL9PgGHg0_EF86FwdiqCre&index=23&t=1186s
+
