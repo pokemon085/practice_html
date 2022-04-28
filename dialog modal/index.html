@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!-- source https://www.youtube.com/watch?v=AYEsQm-ka2M -->
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .wrap {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wrap .cancel_btn {
+        background: #8868f1;
+        border: 0;
+        padding: 20px;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .wrap .cancel_btn:hover {
+        background: #7044ff;
+    }
+
+    .modal_popup {
+        position: relative;
+        display: none;
+    }
+
+    .modal_popup.active {
+        display: block;
+    }
+
+    .modal_popup .bg_shadow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100%;
+    }
+
+    .modal_popup .popup {
+        background: #fff;
+        width: 500px;
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .modal_popup .popup .popup_head {
+        padding: 20px;
+        padding-bottom: 0;
+        font-size: 18px;
+        font-weight: 600;
+        position: relative;
+    }
+
+    .modal_popup .popup .popup_head .close-circle-outline {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 25px;
+        height: 25px;
+        /* background: url("") no-repeat; */
+    }
+
+    .modal_popup .popup .popup_head .close-circle-outline:hover {
+        opacity: 0.6;
+    }
+
+    .modal_popup .popup .popup_body {
+        padding: 20px;
+        font-size: 14px;
+        line-height: 20px;
+        min-height: 180px;
+    }
+
+    .modal_popup .popup .popup_foot {
+        display: flex;
+    }
+
+    .modal_popup .popup .popup_foot .popup_btn {
+        width: 50%;
+        border: 0;
+        padding: 20px;
+        cursor: pointer;
+    }
+
+    .modal_popup .popup .popup_foot .popup_cancel_btn {
+        background: #eee;
+    }
+
+    .modal_popup .popup .popup_foot .popup_cancel_btn:hover {
+        background: #d8d8d8;
+    }
+
+    .modal_popup .popup .popup_foot .popup_confirm_btn {
+        background-color: #00c06d;
+        color: #fff;
+    }
+
+    .modal_popup .popup .popup_foot .popup_confirm_btn:hover {
+        background: #00804e;
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <button class="cancel_btn">cancel</button>
+        <div class="modal_popup">
+            <div class="bg_shadow"></div>
+            <div class="popup">
+                <div class="popup_head">Do you want to cancel your account ?
+                    <ion-icon name="close-circle-outline" class="close-circle-outline"></ion-icon>
+                </div>
+                <div class="popup_body">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas a ipsam nisi? Est, recusandae
+                    molestiae saepe deleniti asperiores voluptatum! Dolorem cumque dolores alias nihil ipsa nobis maxime
+                    magnam dignissimos reprehenderit.
+                </div>
+                <div class="popup_foot">
+                    <button class="popup_btn popup_cancel_btn">Cancel</button>
+                    <button class="popup_btn popup_confirm_btn">Confirms</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var cancel_btn = document.querySelector(".cancel_btn");
+        var modal_popup = document.querySelector(".modal_popup");
+        var close_circle_outline = document.querySelector(".close-circle-outline");
+        var popup_cancel_btn = document.querySelector(".popup_cancel_btn");
+
+        cancel_btn.addEventListener("click", function () {
+            modal_popup.classList.add("active")
+        })
+        close_circle_outline.addEventListener("click", function () {
+            modal_popup.classList.remove("active")
+        })
+        popup_cancel_btn.addEventListener("click", function () {
+            modal_popup.classList.remove("active")
+        })
+    </script>
+</body>
+
+</html>
