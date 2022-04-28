@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+ 
+        .aaa {
+            max-height: 1000px;
+            transition: all 500ms ease;
+            padding: 10px;
+            background-color: #eee;
+        }
+
+        .aaa.collapsed {
+            max-height: 0px;
+            overflow: hidden;
+            padding: 0px;
+           
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="box">
+        <h2>Heading</h2>
+        <div :class="['aaa',{collapsed:!boxshow}]">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis libero consectetur corrupti, vitae voluptates ducimus, fuga omnis illum ullam repellat, illo dolorum temporibus eius odit earum reiciendis? Vero, harum provident.
+        Magnam velit natus debitis modi qui, aliquid quos? Ratione, corrupti delectus quisquam iste atque voluptatum eos eveniet voluptate voluptatem at alias illum nemo amet officiis nesciunt harum perspiciatis error temporibus.
+        Esse quam ipsa, obcaecati nobis sequi a maiores suscipit reiciendis rem? Reiciendis illum earum officia assumenda nobis eaque nam maxime, quam hic nostrum recusandae sapiente culpa vitae quia tenetur autem.
+        Aspernatur sed fuga ratione asperiores ab, in beatae quisquam sint enim saepe minus totam sapiente assumenda delectus corporis architecto odio expedita deleniti, quos maxime aperiam. Ipsum sapiente iure autem recusandae.
+        Pariatur totam voluptate rem quas ducimus cumque. Quae illum rerum excepturi. Incidunt, alias et perferendis provident ea praesentium impedit itaque minus ex vero aliquid porro maxime totam dicta, saepe voluptate.
+        Maxime eligendi corrupti ad temporibus quibusdam nostrum assumenda iure incidunt cum. Nulla facilis placeat illo quaerat repudiandae pariatur suscipit quidem facere? Obcaecati esse ipsum sapiente optio, debitis tenetur nostrum beatae?
+        </div>
+        <button class="togglebox" @click="togglebox">按钮</button>
+    </div>
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: "#box",
+            data: {
+                boxshow: true
+            },
+            methods: {
+
+                togglebox: function () {
+                    this.boxshow = !this.boxshow;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
