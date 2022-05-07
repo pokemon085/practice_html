@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <!-- source cwc https://www.youtube.com/watch?v=rm5lSQXoO4I&t=247s -->
+  </head>
+
+  <body>
+    <div class="container-all">
+      <div class="container-left">
+        <nav id="sidebar">
+          <button type="button" id="collapse" class="collapse-btn">
+            <i class="fa-solid fa-align-left"></i>
+          </button>
+
+          <ul class="list-unstyled">
+            <h5>abc sidebar</h5>
+            <li>
+              <a href="#">home<i class="fa-solid fa-house"></i></a>
+            </li>
+            <li>
+              <a href="#">about<i class="fa-solid fa-address-card"></i></a>
+            </li>
+            <li>
+              <a href="#">video<i class="fa-solid fa-video"></i></a>
+            </li>
+            <li>
+              <a href="#sublist" data-bs-toggle="collapse" id="dropdown"
+                >new<i class="fa-solid fa-file-lines"></i
+              ></a>
+              <ul id="sublist" class="list-unstyled collapse">
+                <li><a href="#">hot</a></li>
+                <li><a href="#">weather</a></li>
+                <li><a href="#">health</a></li>
+                <li><a href="#">entertainment</a></li>
+                <li><a href="#">sport</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">service<i class="fa-solid fa-envelope"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container-right">
+        <div class="contariner-fluid">
+          <h1>welcome</h1>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#collapse").on("click", function () {
+          $("#sidebar").toggleClass("active");
+          $(".fa-align-left").toggleClass("fa-angle-right");
+        });
+      });
+    </script>
+  </body>
+</html>
