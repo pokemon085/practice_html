@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- source =>https://www.youtube.com/watch?v=-mmzaE6eLzY&list=PLqivELodHt3hxeuLX8PYaI8u1GcDaBoJo -->
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .wrap {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(-30deg,#fdaecb,#e7507f,#fe8556);
+      }
+      .container {
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        /* flex-wrap: wrap; */
+        /* 超過寬度會換行 */
+      }
+      .item {
+        width: 368px;
+        margin: 0 15px;
+        display: flex;
+        background-color:rgba(255,255,255,.6);
+        border:1px solid #888;
+        box-shadow:0 10px 30px rgba(160,0,0,.5) ;
+      }
+      .item .pic {
+        width: 30%;
+      }
+      .item .pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 讓圖片跟容器一樣大 */
+      }
+      .item .text {
+        width: 70%;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        /* 讓標題都能水平對齊 */
+      }
+      .item .text h2 {
+        font-weight: 500;
+        margin-bottom: .4em;
+      }
+      .item .text p {
+        font-weight: 100;
+      }
+      .item .text .btn {
+        line-height: 1.5em;
+        border: 1px solid #ddd;
+        padding: 0 1em;
+        align-self: flex-end;
+        text-decoration: none;
+        border-radius: 200px;
+        margin-top: auto;
+        color:#aaa;
+      }
+      .item .text .btn:hover{
+        background-color: #ccc;
+        color:#fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="container">
+        <div class="item">
+          <div class="pic">
+            <img src="https://picsum.photos/400/400/?random=10" />
+          </div>
+          <div class="text">
+            <h2>帝國意味着天</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis
+              similique commodi porro quod nobis repellendus.
+            </p>
+            <a href="" class="btn">more</a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="pic">
+            <img src="https://picsum.photos/400/400/?random=10" />
+          </div>
+          <div class="text">
+            <h2>帝國意味着天</h2>
+            <p>
+              Dolores repudiandae quis distinctio, non aliquam velit! Quisquam
+              facilis sapiente nisi nihil officia deleniti quam.
+            </p>
+            <a href="" class="btn">more</a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="pic">
+            <img src="https://picsum.photos/400/400/?random=10" />
+          </div>
+          <div class="text">
+            <h2>帝國意味着天</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis
+              similique commodi porro quod nobis repellendus. Dolores
+              repudiandae quis distinctio, non aliquam velit! Quisquam facilis
+              sapiente nisi nihil officia deleniti quam.
+            </p>
+            <a href="" class="btn">more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
