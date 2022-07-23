@@ -1,0 +1,47 @@
+<!-- 預設vue app格式 檔案->喜好設定->設定使用者程式碼片段
+     把想要的格式貼到https://snippet-generator.app/ 產生JSON格式 貼進去 要用的時候打vueapp -->
+
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=#a#, initial-scale=1.0">
+         <title>Document</title>
+         <style>
+             h2{
+                 white-space: pre;
+             }
+             
+         </style>
+     </head>
+     <body>
+         <div id="app"></div>
+     
+         <template id="my-app">
+             <h2>{{aaa}}</h2>
+            
+         </template>
+     
+         <script src="./js/vue.js"></script>
+         <script>
+             const App={
+                 template:'#my-app',
+                 data(){
+                     return{
+                         message:'Hello World',
+                         message2:'aaaaa'
+                     }
+                 },
+                 computed:{
+                     aaa(){
+                         
+                         return this.message + "\n" +this.message2;
+                     }
+                 }
+             }
+     
+             Vue.createApp(App).mount('#app');
+         </script>
+     </body>
+     </html>
