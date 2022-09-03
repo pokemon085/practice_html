@@ -16,18 +16,30 @@
         }
 
         .wrap {
-            width: 100%;
-            height: 100%;
+            width: 350px;
+            height: 100vh;
+            border: 1px solid #ddd;
+            margin-left: 10px;
+            box-sizing: border-box;
+            position: absolute;
+        }
 
+
+        .fix-area {
+            width: 100%;
+            background: red;
+            position: sticky;
+            top: 0;
         }
 
         .tab-wrap {
             display: flex;
-            width: 320px;
+            width: 100%;
             height: 50px;
             background-color: #eee;
             overflow-x: scroll;
             position: relative;
+
         }
 
         .tab-wrap .item {
@@ -43,18 +55,18 @@
             align-items: center;
             background-color: rgb(253, 220, 253);
             position: sticky;
-            right: 0px;
+            right: -2px;
             border-left: 1px solid #000;
-            padding:0 5px;
+            padding: 0 5px;
         }
 
         .icon {
             width: 20px;
             height: 20px;
-            transition: all .5s;
+            transition: transform .5s;
         }
 
-        .icon.active{
+        .icon.active {
             transform: rotate(180deg);
         }
 
@@ -62,27 +74,178 @@
             width: 100%;
             height: 100%;
         }
+
+        .drop-down-mask {
+            position: absolute;
+            top: 96px;
+            right: 0;
+            width: 100%;
+            height: calc(100vh - 97px);
+            background-color: rgba(0, 0, 0, .5);
+
+        }
+
+        .drop-down {
+            width: 100%;
+            height: auto;
+            background-color: antiquewhite;
+
+        }
+
+        .drop-down-list {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        .drop-down-list .item {
+            border: 1px solid #000;
+            padding: 10px;
+            width: 40px;
+            height: 20px;
+            margin: 10px;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .content {
+            height: calc(100% - 100px);
+            overflow-y: scroll;
+        }
     </style>
 
 </head>
 
 <body>
     <div id="box">
-        <h2>Heading</h2>
-        <div class="wrap">
-            {{open}}
-            <div class="tab-wrap">
-                <div v-for="(item,index) in list" class="item">
-                    {{item}}
-                </div>
 
-                <!-- more button -->
-                <div class="more" @click="openHandler">
-                    <div :class="['icon',{active:open}]">
-                        <img src="./more.png" alt="">
+        <div class="wrap">
+            <div class="fix-area">
+                <h2>Heading</h2>
+                {{open}}
+                <div class="tab-wrap">
+                    <div v-for="(item,index) in list" class="item">
+                        {{item}}
+                    </div>
+
+                    <!-- more button -->
+                    <div class="more" @click="openHandler">
+                        <div :class="['icon',{active:open}]">
+                            <img src="./more.png" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+            <div class="content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
+                quod
+                doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
+                quam.
+                Sunt!
+
+            </div>
+
+            <div v-if="open" :class="['drop-down-mask']">
+                <div class="drop-down">
+                    <div class="drop-down-list">
+                        <div v-for="(item,index) in list" class="item">
+                            {{item}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
 
     </div>
@@ -91,7 +254,7 @@
         var vm = new Vue({
             el: "#box",
             data: {
-                list: ['aaa', 'bbb', 'ccc', 'ddd', 'eee', 'fff', 'ggg', 'hhh'],
+                list: ['aaaaaaaaaaaa', 'bbb', 'ccc', 'ddd', 'eee', 'fff', 'ggg', 'hhh', 'ddd', 'eee', 'fff', 'ggg', 'hhh'],
                 open: false
             },
             methods: {
