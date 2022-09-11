@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            height: 500px;
+            overflow: hidden;
+            border: 1px solid;
+            padding: 10px;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .subject {
+            background-color: #eee;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-radius: 14px;
+          
+        }
+
+        .subject.expand {
+            border-radius: 14px 14px 0 0;
+        }
+
+        .subject .title-wrap {
+            display: flex;
+            align-items: center;
+        }
+
+        .subject .title {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+
+        .subject .image {
+            content: "";
+            background-image: url('./add.png');
+            background-size: 14px 14px;
+            width: 14px;
+            height: 14px;
+        }
+
+        .subject .image.change {
+            background-image: url('./subtract.png');
+        }
+     
+        .subject .status {
+            margin: auto 0;
+        }
+
+        .subject .status .button {
+            background: red;
+            text-align: center;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            width: 60px;
+        }
+
+        .list {
+            font-size: 12px;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        .list.expand{
+            max-height: 100vh;
+            padding: 10px;
+            padding: 0px;
+            background-color:beige;
+            border-radius: 0 0 14px 14px;
+        }
+
+        .list .total {
+            padding: 3px 33px;
+            background-color: blanchedalmond;
+        }
+
+  
+
+        .list .list-item {
+            padding: 0px 10px 0 33px;
+        }
+
+        .list .list-item .item-wrap {
+            padding: 3px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .list-item .item-wrap:last-child{
+            border:none
+        }
+
+        .list .list-item .item-wrap .up {
+            margin-bottom: 5px;
+        }
+
+        .item-wrap .down {
+            display: flex;
+            padding: 10px 0;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+         .money-wrap {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .money-wrap .icon {
+            margin-right: 4px;
+            border-radius: 14px;
+            border: 2px solid orange;
+            background-color: yellow;
+            width: 14px;
+            height: 14px;
+            text-align: center;
+        }
+
+        .down .status .button {
+            background: red;
+            text-align: center;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            width: 60px;
+        }
+
+        .down .status .timer{
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .timer >span{
+            background: orange;
+            width: 16px;
+            height: 16px;
+            padding:3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap" id="box">
+        <div class="container">
+            <div :class="['subject',{expand:!boxshow}]">
+                <div class="title-wrap">
+                    <div :class="['image',{change:!boxshow}]" @click="togglebox()"></div>
+                    <div class="title">
+                        <span>現金承諾尺</span>
+                        <div class="money-wrap">
+                            <div class="icon">p</div>
+                            <div class="money">300.00(2/3)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="status">
+                    <div class="button">要求回應包</div>
+                </div>
+            </div>
+            <div :class="['list',{expand:!boxshow}]">
+                <div class="total">
+                    <div class="name">搜尋不到:</div>
+                    <div class="time">aaaaaaa~bbbbbb</div>
+                    <div class="money-wrap">
+                        <div class="icon">p</div>
+                        <div class="money">300.00(2/3)</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="item-wrap">
+                        <div class="up">
+                            <div class="name">搜尋不到:</div>
+                            <div class="time">aaaaaaa~bbbbbb</div>
+                            <div class="record">標誌走了:傢俱監控</div>
+                        </div>
+                        <div class="down">
+                            <div class="money-wrap">
+                                <div class="icon">p</div>
+                                <div class="money">300.00(2/3)</div>
+                            </div>
+
+                            <div class="status">
+                                <div class="button">要求回應包</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-wrap">
+                        <div class="up">
+                            <div class="name">搜尋不到:</div>
+                            <div class="time">aaaaaaa~bbbbbb</div>
+                            <div class="record">標誌走了:傢俱監控</div>
+                        </div>
+                        <div class="down">
+                            <div class="money-wrap">
+                                <div class="icon">p</div>
+                                <div class="money">300.00(2/3)</div>
+                            </div>
+                            <div class="status">
+                                <div class="button">發達</div>
+                                <div class="timer">
+                                    <span>00</span> :
+                                    <span>09</span> :
+                                    <span>40</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: "#box",
+            data: {
+                boxshow: true
+            },
+            methods: {
+
+                togglebox: function () {
+                    this.boxshow = !this.boxshow;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
