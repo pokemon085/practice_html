@@ -115,13 +115,22 @@
             height: calc(100% - 100px);
             overflow-y: scroll;
         }
+
+        .go-top {
+            position: fixed;
+            bottom: 15px;
+            right: 45px;
+            border: 2px solid orange;
+            border-radius: 50%;
+            padding: 5px 10px;
+            background: burlywood;
+        }
     </style>
 
 </head>
 
 <body>
     <div id="box">
-
         <div class="wrap">
             <div class="fix-area">
                 <h2>Heading</h2>
@@ -141,7 +150,7 @@
             </div>
 
 
-            <div class="content">
+            <div class="content" ref="content">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil odit, dicta quaerat voluptates ipsam
                 quod
                 doloribus laboriosam, quibusdam minus repudiandae aliquam et quia illum iste optio assumenda, modi
@@ -234,6 +243,8 @@
                 Sunt!
 
             </div>
+
+            <div class="go-top" @click="goTop" v-if="show">^</div>
 
             <div v-if="open" :class="['drop-down-mask']">
                 <div class="drop-down">
@@ -256,13 +267,25 @@
             el: "#box",
             data: {
                 list: ['aaaaaaaaaaaa', 'bbb', 'ccc', 'ddd', 'eee', 'fff', 'ggg', 'hhh', 'ddd', 'eee', 'fff', 'ggg', 'hhh'],
-                open: false
+                open: false,
+                show: false
+            },
+            mounted() {
+            
+                this.$refs.content.addEventListener('scroll', () => {
+                    console.log(" scroll " + this.$refs.content.scrollTop);
+                    this.show = this.$refs.content.scrollTop > 0 ? true : false
+                }, false)
             },
             methods: {
                 openHandler() {
                     this.open = !this.open;
+                },
+                goTop() {
+                    this.$nextTick(() => {
+                        this.$refs.content.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
                 }
-
             }
         })
     </script>
