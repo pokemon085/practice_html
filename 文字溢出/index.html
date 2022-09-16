@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .wrap {
+            margin:10px;
+            width: calc(100% - 20px);
+            display: flex;
+            background-color: red;
+            align-items: center;
+            min-width: 400px;
+        }
+
+        .title {
+            background-color: gray;
+            width: 50%;
+            min-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            box-sizing: border-box;
+            padding:10px
+        }
+        .money{
+            min-width: 200px;
+            width: 50%;
+            text-align: right;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            box-sizing: border-box;
+            padding:10px
+        }
+
+
+        .title2 {
+            background-color: gray;
+            width: 50%;
+            word-wrap:break-word;
+            box-sizing: border-box;
+            padding:10px;
+        }
+        .money2{
+            width: 50%;
+            text-align: right;
+            
+            word-wrap:break-word;
+            box-sizing: border-box;
+            padding:10px
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 省略 -->
+    <div class="wrap">
+        <div class="title">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+        <div class="money">$45465453453453453453453444444444444444444444444444444444444444444444444444444444453534646345345435353553453454353542121321</div>
+    </div>
+
+    <!-- 換行 -->
+    <div class="wrap">
+        <div class="title2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+        <div class="money2">$45465453453453453453453444444444444444444444444444444444444444444444444444444444453534646345345435353553453454353542121321</div>
+    </div>
+</body>
+
+</html>
