@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            width: 300px;
+            height: 50px;
+            background-color: bisque;
+            border-radius: 50px;
+            padding: 5px;
+            display: flex;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .background {
+            content: "";
+            position: absolute;
+            width: 145px;
+            height: 40px;
+            border-radius: 50px;
+            background: red;
+            left: 5px;
+            transition: .1s;
+        }
+
+        .background.active {
+            position: absolute;
+            left: 150px;
+        }
+
+        .toggle-button {
+            width: 145px;
+            border-radius: 50px;
+            text-align: center;
+            line-height: 40px;
+            transition: .1s;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="toggle-button" onclick="toggleButton()">AA</div>
+            <div class="toggle-button" onclick="toggleButton()">BB</div>
+            <div class="background"></div>
+        </div>
+    </div>
+    <script>
+
+        function toggleButton() {
+            let toggle = document.querySelector(".background");
+            toggle.classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>
