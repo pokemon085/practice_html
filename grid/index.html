@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            outline:2px solid #f00;
+            width: 100%;
+            height: 800px;
+            display: grid;
+            grid-template-rows: 200px 200px 200px auto;
+            /* 設定auto因為gap會使rows凸出來 */
+            grid-template-columns: 2fr 2fr 1fr 1fr;
+            grid-template-areas: 
+            "b3 . b1 b1"
+            "b3 b4 b1 b1"
+            "b3 b4 b1 b1"
+            "b2 b2 b2 b2";
+            grid-gap:10px;
+        }
+
+        .aa{
+            grid-area:b1;
+            background-color: aquamarine;
+        }
+        .bb{
+            grid-area:b2;
+            background-color:antiquewhite
+        }
+        .cc{
+            grid-area:b3;
+            background-color:cadetblue;
+        }
+        .dd{
+            grid-area:b4;
+            background-color:blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="aa">a</div>
+        <div class="bb">b</div>
+        <div class="cc">c</div>
+        <div class="dd">d</div>
+    </div>
+</body>
+</html>
