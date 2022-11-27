@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #000;
+            background-color: rgb(146, 180, 231);
+
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+
+
+        }
+
+        .box:nth-child(2n+1) {
+            background-color: bisque;
+            float: left;
+            clear: both;
+
+        }
+
+        .box:nth-child(2n+2) {
+            background-color: rosybrown;
+            float: right;
+            clear: both;
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+            /*For IE 6&7 only*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap clearfix">
+        <div class="boxes clearfix">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consequuntur ratione aliquid, neque ad
+                voluptates odit blanditiis quisquam laudantium, rerum temporibus perferendis iusto tempore expedita.
+                Deserunt sequi non voluptates voluptas?</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
