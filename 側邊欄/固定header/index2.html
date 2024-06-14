@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- https://stackoverflow.com/questions/9677894/header-div-stays-at-top-vertical-scrolling-div-below-with-scrollbar-only-attach -->
+<!-- header固定在最上方 scrollbar在header下面 
+        外層用display:flex flex-direction:columns;定位 
+        header不管他
+        設定內容 flex:1, overflow-y:auto
+    -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 100%;
+            height: 30px;
+            background-color: #eee;
+        }
+
+        .drawer {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .drawer .content-wrap {
+            width: 80%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            height: 50px;
+            background-color: red;
+        }
+
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: red;
+            border-radius: 21px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b30000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="wrap">
+            <button @click="show=true">aaaa</button>
+        </div>
+
+        <div class="drawer" v-if="show">
+            <div class="content-wrap">
+                <div class="header">
+                    <button @click="show=false">close</button>
+                </div>
+                <div class="content">
+                    <div class="item" v-for="i in 100" :key="i">
+                        {{message}}/{{i}}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue
+
+        createApp({
+            setup() {
+                const message = ref('Hello vue!')
+                const show = ref(false)
+                return {
+                    message,
+                    show
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
